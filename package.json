@@ -1,0 +1,26 @@
+{
+  "name": "daniel-murphy-coaching",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@formkit/addons": "^1.4.0",
+    "@formkit/themes": "^1.4.0",
+    "@formkit/vue": "^1.4.0",
+    "primeflex": "^3.3.1",
+    "primeicons": "^6.0.1",
+    "primevue": "^3.45.0",
+    "swiper": "^11.0.5",
+    "vue": "^3.3.11"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.5.2",
+    "sass": "^1.69.5",
+    "vite": "^5.0.8"
+  }
+}
