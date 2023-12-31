@@ -1,7 +1,7 @@
 <script setup>
 import HomeNavbar from '../components/HomeNavbar.vue';
 import Header from '../components/Header.vue'
-import About from '../components/about.vue'
+import About from '../components/About.vue'
 import Services from '../components/Services.vue'
 import Footer from '../components/Footer.vue'
 
