@@ -9,7 +9,7 @@
                 <p class = "services__selection-item--text">{{ service.description }}</p>   
             </div>
         </div>
-        <a class = "button" href="#contact">Get started</a>
+        <a class = "button" href="/contact">Get started</a>
     </div>
 </template>
 

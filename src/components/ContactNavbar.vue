@@ -9,7 +9,7 @@
     </nav>
     <div :class = "{'sidebar': true, 'open': navOpen}">
         <ul :class = "{'items': true, 'open': navOpen}">
-            <li :link = "item.link" class = "items__item" v-for="item in items" @click ="navigateToLink(item)">{{ item.name }}</li>
+            <li class = "items__item" v-for="item in items" ><a :href = "item.link">{{ item.name }}</a></li>
         </ul>
     </div>
 </template>
@@ -113,6 +113,10 @@
     transition: all 0.3s ease;
     margin-top: var(--navbar-height);
     border-left: 1px solid #ffffff59;
+    @media(max-width: 768px){
+        width: 100%;
+        right: -100%;
+    }
     
     &.open{
         right: 0;
@@ -135,7 +139,16 @@
             opacity: 1;
         }
         &__item{
-            font-size: 1.5em;
+            a{
+                font-size: 1.5rem;
+                color: white;
+                margin-bottom: 1em;
+                text-decoration: none;
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+            font-size: 1.5rem;
             color: white;
             margin-bottom: 1em;
             &:hover{
@@ -153,17 +166,10 @@ const navOpen = ref(false);
 const items  = [
     
     {
-        name: "About",
-        link: "#about"
+        name: "Home",
+        link: "/",
+        otherPage: true
     },
-    {
-        name: "Services",
-        link: "#services"
-    },
-    {
-        name: "Contact",
-        link: "#contact"
-    }
 ];
 
 const toggleNav = () => {
@@ -171,6 +177,9 @@ const toggleNav = () => {
 };
 
 const navigateToLink = (link) => {
+    if(link.otherPage){
+        document.location.href = link.link;
+    }
     navOpen.value = false;
 
     setTimeout(() => {

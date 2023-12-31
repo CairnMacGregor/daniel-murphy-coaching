@@ -1,22 +1,18 @@
 <script setup>
-import Navbar from './components/Navbar.vue'
-import Header from './components/Header.vue'
-import About from './components/About.vue'
-import Services from './components/Services.vue'
-import Contact from './components/Contact.vue'
-import Footer from './components/Footer.vue'
+import { RouterLink, RouterView } from 'vue-router'
+
 </script>
 
 <template>
-    <Navbar></Navbar>
-    <div class = "content">
-      <Header></Header>
-      <About></About>
-      <Services></Services>
-      <Contact></Contact>
+    <div class="app-wrapper content">
+      <router-view v-slot="{ Component }">
+        <transition name="fade" mode="out-in">
+          <div :key="$route.name">
+            <component :is="Component"></component>
+          </div>
+        </transition>
+      </router-view>
     </div>
-    <Footer></Footer>
-
 </template>
 
 <style>
@@ -57,4 +53,62 @@ import Footer from './components/Footer.vue'
     max-width: 100%;
     height: auto;
   }
+
+  /* TRANSITIONS */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.35s;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.scale-enter-active,
+.scale-leave-active {
+  transition: all 0.5s ease;
+}
+.scale-enter-from,
+.scale-leave-to {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+.app-wrapper {
+  background: var(--main-grey);
+}
+
+
+/* Track */
+::-webkit-scrollbar {
+  height: 1rem;
+  width: 0.5rem;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--main-grey);
+  border-radius: 400px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--main-grey);
+}
+
+/* Track on hover */
+::-webkit-scrollbar-track:hover {
+  background: #202123;
+}
+
+/* Track piece */
+::-webkit-scrollbar-track {
+  background: #202123;
+}
+
+/* Handle when scrolling */
+::-webkit-scrollbar-thumb:active {
+  background: var(--main-grey);
+}
 </style>

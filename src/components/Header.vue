@@ -21,16 +21,16 @@
                 <h1 class="slide-title">Elevate Your Fitness</h1>
                 <p class="slide-text">Experience a comprehensive lifestyle change, beyond just physical transformation.</p>
                 <p class="slide-text">Take charge of your well-being. Unlock your potential today.</p>
-                <a class="slide-button" href="#contact">Work with me</a>
+                <a class="slide-button" href="/contact">Work with me</a>
               </div>
           </swiper-slide>
-          <swiper-slide>
+          <!-- <swiper-slide>
             <div class = "slide">
                 <h1 class="slide-title">Lorem Ipsum</h1>
                 <p class="slide-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur alias unde maxime ipsam ut pariatur, enim aperiam, dolor quibusdam dicta sint adipisci ratione fugiat nihil quae in amet illo quod..</p>
                 <a class="slide-button" href="#services">What I offer</a>
               </div>
-          </swiper-slide>
+          </swiper-slide> -->
         </swiper>
     </section>
 </template>

@@ -17,5 +17,9 @@
       label="Do you track the food you eat?"
       validation="required"
     />
-
+    <FormKit
+      type="textarea"
+      label="Give me a brief description of your diet, including drinks"
+      validation="required"
+    />
   </template>
