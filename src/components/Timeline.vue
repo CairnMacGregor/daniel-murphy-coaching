@@ -14,7 +14,7 @@
                         {{ slotProps.item.date }}
                     </template>
                     <template #content>
-                       <img v-if="slotProps.item.image" :src="getImage(slotProps.item.image)" :alt="slotProps.item.name" width="200" class="shadow-1 timeline-image" />
+                       <img v-if="slotProps.item.image" :src="slotProps.item.image" :alt="slotProps.item.name" width="200" class="shadow-1 timeline-image" />
                         <p v-if="slotProps.item.description">
                             {{ slotProps.item.description }}
                         </p>
@@ -57,12 +57,10 @@ import { ref, onMounted, onUnmounted} from "vue";
 
 const align = ref('alternate');
 
-const images = import.meta.glob('/assets/*');
-console.log(images)
-const getImage = (imageName) => {
-  const imageModule = images[`/assets/${imageName}`];
-  return imageModule ? imageModule.name : '';
-};
+import preImg from '../assets/pre_lifting.jpeg';
+import beginsImg from '../assets/lifting_begins.jpg';
+import seriousImg from '../assets/serious_now.jpeg';
+import currentImg from '../assets/current.jpeg';
 
 onMounted(() => {
   const updateAlign = () => {
@@ -82,10 +80,10 @@ onUnmounted(() => {
 });
 
 const events = ref([
-    { status: 'Pre Lifting', date: '15/10/2016', icon: 'pi pi-check', color: '#fff', image: 'pre_lifting.jpeg', description: 'I was a skinny little bitch eh.'},
-    { status: 'Lifting Begins', date: '15/10/2017', icon: 'pi pi-cog', color: '#fff', image: 'lifting_begins.jpg', description: 'Slightly less skinny.' },
-    { status: 'Serious Now', date: '15/10/2021', icon: 'pi pi-shopping-cart', color: '#fff', image: 'serious_now.jpeg'  },
-    { status: 'Current', date: '20/12/2023', icon: 'pi pi-check', color: '#fff', image: 'current.jpeg' }
+    { status: 'Pre Lifting', date: '15/10/2016', icon: 'pi pi-check', color: '#fff', image: preImg , description: 'I was a skinny little bitch eh.'},
+    { status: 'Lifting Begins', date: '15/10/2017', icon: 'pi pi-cog', color: '#fff', image: beginsImg, description: 'Slightly less skinny.' },
+    { status: 'Serious Now', date: '15/10/2021', icon: 'pi pi-shopping-cart', color: '#fff', image: seriousImg  },
+    { status: 'Current', date: '20/12/2023', icon: 'pi pi-check', color: '#fff', image: currentImg }
 ]);
 </script>
 
