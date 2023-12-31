@@ -57,10 +57,10 @@ import { ref, onMounted, onUnmounted} from "vue";
 
 const align = ref('alternate');
 
-const images = import.meta.glob('/src/assets/*');
+const images = import.meta.glob('/assets/*');
 console.log(images)
 const getImage = (imageName) => {
-  const imageModule = images[`/src/assets/${imageName}`];
+  const imageModule = images[`/assets/${imageName}`];
   return imageModule ? imageModule.name : '';
 };
 
